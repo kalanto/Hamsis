@@ -1,0 +1,16 @@
+.score{
+   width: 20px;
+   /*padding: 1%;*/
+}
+.frontNine{
+   width: 20px;
+   border: 1px solid black;
+   position: relative;
+   /*padding: 1%;*/
+}
+.backNine{
+   width: 20px;
+   border: 1px solid black;
+   position: relative;
+   /*padding: 1%;*/
+}
