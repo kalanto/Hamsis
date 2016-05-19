@@ -144,131 +144,73 @@
                <td class="backNine">4</td>
             </tr>
             <td>Name</td>
-               <td><input class="score" ng-model="score.1">
+               <td><input class="score" ng-model="score[0]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.2">
+               <td><input class="score" ng-model="score[1]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.3">
+               <td><input class="score" ng-model="score[2]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.4">
+               <td><input class="score" ng-model="score[3]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.5">
+               <td><input class="score" ng-model="score[4]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.6">
+               <td><input class="score" ng-model="score[5]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.7">
+               <td><input class="score" ng-model="score[6]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.8">
+               <td><input class="score" ng-model="score[7]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.9">
+               <td><input class="score" ng-model="score[8]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td>{{score.total}}</td>
-               <td><input class="score" ng-model="score.10">
+               <td>{{total}}</td>
+               <td><input class="score" ng-model="score[9]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.1">
+               <td><input class="score" ng-model="score[10]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.12">
+               <td><input class="score" ng-model="score[11]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.13">
+               <td><input class="score" ng-model="score[12]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.14">
+               <td><input class="score" ng-model="score[13]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.15">
+               <td><input class="score" ng-model="score[14]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.16">
+               <td><input class="score" ng-model="score[15]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.17">
+               <td><input class="score" ng-model="score[16]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td><input class="score" ng-model="score.18">
+               <td><input class="score" ng-model="score[17]" ng-change="totalScore(score)" type="number">
                   </input>
                </td>
-               <td>{{score.total}}</td>
+               <td>{{total}}</td>
             </tr>
-            <!-- <tr>
-               <td>Name</td>
-                  <td><input class="score" ng-model="score.1">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.2">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.3">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.4">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.5">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.6">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.7">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.8">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.9">
-                     </input>
-                  </td>
-                  <td>{{score.total}}</td>
-                  <td><input class="score" ng-model="score.10">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.1">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.12">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.13">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.14">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.15">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.16">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.17">
-                     </input>
-                  </td>
-                  <td><input class="score" ng-model="score.18">
-                     </input>
-                  </td>
-                  <td>{{score.total}}</td>
-               </tr> -->
          </table>
       <button ng-click="totalScore(score)">Total Score Card</button>
       </div>
 
 <!-- SCRIPTS -->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
    <script src="./js/app.js"></script>
    <script src="./js/controller.js"></script>
    <script src="./js/service.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+
 
    </body>
 </html>
