@@ -1,8 +1,9 @@
 angular.module('app').service('mainService', function(){
-var playerScore
+
    this.totalScore = function(score){
+     var playerScore = 0;
       for (var i = 0; i < score.length; i++) {
-         playerScore = score[i] + playerScore
+         playerScore = score[i] + playerScore;
       }
    return playerScore
    }
