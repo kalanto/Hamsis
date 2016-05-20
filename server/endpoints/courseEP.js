@@ -2,7 +2,7 @@ var Course = require('../../server/schema/courseSchema.js')
 module.exports={
 
 //create new course
-   coursePost: function(req,res,next){
+   courseCreate: function(req,res,next){
       console.log(req.body)
          var course = new Score(req.body)
             course.save(function(e,r){
@@ -14,7 +14,7 @@ module.exports={
                   res.send(r)
                }
             })
-   }
+}
 //get course request
 ,   course: function(req,res){
       Score.find(req.query, function(e, r){
@@ -25,7 +25,7 @@ module.exports={
             res.json(r)
          }
       })
-   }
+}
 //get course by ID request
 ,  courseID: function(req,res){
    Score.findOneAndUpdate(req.params.ID, function(e,r){
@@ -47,7 +47,7 @@ module.exports={
             res.send(r.data)
          }
       })
-   }
+}
 //delete course by ID request
 ,  courseDelete: function(req,res){
    Score.findOneAndRemove(req.params.ID, function(e,r){
