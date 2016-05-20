@@ -1,4 +1,4 @@
-var Score = require('.server/schema/scoreSchema.js')
+var Score = require('../server/schema/scoreSchema.js')
 module.exports ={
 //create new scoring
    scorePost: function(req,res,next){

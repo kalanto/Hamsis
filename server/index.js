@@ -4,6 +4,7 @@ var mongoose = require('mongoose')
 var bodyParser = require('body-parser')
 var passport = require('passport')
 var kalanto = require('../server/kalanto.js')
+var scoring = require('../server/scoreEndPoint.js')
 // var scoreSchema =
 var playerScore = ('./../schema/scoreSchema')
 var course = ('./../schema/courseSchema')
@@ -23,7 +24,7 @@ mongoose.connect('mongodb://localhost/database')
 
 //endpoints for scoring
 app.get('/score', scoring.score)
-app.get('/score/:ID', scoring.getScoreID)
+// app.get('/score/:ID', scoring.getScoreID)
 app.post('/score/score', scoring.scorePost)
 app.put('/score/update/:ID', scoring.scoreUpdate)
 app.delete('/score/delete/:ID')
