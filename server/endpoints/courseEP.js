@@ -2,22 +2,22 @@ var Course = require('../../server/schema/courseSchema.js')
 module.exports={
 
 //create new course
-   courseCreate: function(req,res,next){
-      console.log(req.body)
-         var course = new Score(req.body)
-            course.save(function(e,r){
-               console.log(e)
-               if(e){
-                  res.status(500).send(e)
-               }
-               else{
-                  res.send(r)
-               }
-            })
+courseCreate: function(req,res,next){
+   console.log(req.body)
+      var course = new Course(req.body)
+         course.save(function(e,r){
+            console.log(e)
+            if(e){
+               res.status(500).send(e)
+            }
+            else{
+               res.send(r)
+            }
+         })
 }
 //get course request
 ,   course: function(req,res){
-      Score.find(req.query, function(e, r){
+      Course.find(req.query, function(e, r){
          if(e){
             res.status(500).json(e)
          }
@@ -28,7 +28,7 @@ module.exports={
 }
 //get course by ID request
 ,  courseID: function(req,res){
-   Score.findOneAndUpdate(req.params.ID, function(e,r){
+   Course.findOneAndUpdate(req.params.ID, function(e,r){
       if(e){
          res.status(500).json(e)
       }
@@ -39,7 +39,7 @@ module.exports={
 }
 //update course by ID request
 ,  courseUpdate: function(req,res){
-      Score.findOneAndUpdate(req.params.ID, function(e,r){
+      Course.findOneAndUpdate(req.params.ID, function(e,r){
          if(e){
             res.status(500).json(e)
          }
@@ -50,7 +50,7 @@ module.exports={
 }
 //delete course by ID request
 ,  courseDelete: function(req,res){
-   Score.findOneAndRemove(req.params.ID, function(e,r){
+   Course.findOneAndRemove(req.params.ID, function(e,r){
       if(e){
          res.status(500).json(e)
       }
