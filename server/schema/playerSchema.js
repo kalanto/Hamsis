@@ -6,6 +6,8 @@ var playerSchema = new Schema ({
       first: {type:String,required:true}
    ,  last:{type:String,required:true}
 }
+,  sex:{type:String,required:true}
+,  tee:{type:Number,required:true}
 ,  email: {type:String,required:true}
 ,  score:{type:Schema.ObjectId, ref:'score'}
 ,  course:{type:Schema.ObjectId, ref:'course'}
