@@ -7,7 +7,7 @@ var playerSchema = new Schema ({
    ,  last:{type:String,required:true}
 }
 ,  sex:{type:String,required:true}
-,  tee:{type:Number,required:true}
+,  tee:{type:String,required:true}
 ,  email: {type:String,required:true}
 ,  score:{type:Schema.ObjectId, ref:'score'}
 ,  course:{type:Schema.ObjectId, ref:'course'}
