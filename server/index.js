@@ -10,9 +10,7 @@ var kalanto = require('../server/kalanto.js')
 var scoring = require('../server/endpoints/scoreEP.js')
 var player = require('../server/endpoints/playerEP.js')
 var course = require('../server/endpoints/courseEP.js')
-
-console.log(player);
-console.log(course);
+var team = require('../server/endpoints/teamEP.js')
 
 var app = express()
 
