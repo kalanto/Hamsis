@@ -25,4 +25,12 @@ $scope.courseCreate = function(course){
    console.log(course);
    mainService.courseCreate(course)
 }
+/////////////////////////////
+///create new team profile///
+/////////////////////////////
+$scope.teamCreate = function(team)
+{
+   console.log(team)
+   mainService.teamCreate(team)
+}
 })
