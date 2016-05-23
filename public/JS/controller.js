@@ -27,6 +27,12 @@ $scope.getAllPlayers = function(){
    })
 }
 $scope.getAllPlayers()
+////////////////////////
+///add player to team///
+////////////////////////
+$scope.addTeamPlayer = function(player,teamID){
+   mainService.addTeamPlayer(player,teamID)
+}
 ///////////////////////////////
 ///create new course profile///
 ///////////////////////////////

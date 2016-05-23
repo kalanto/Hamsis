@@ -46,6 +46,15 @@ angular.module('app').service('mainService', function($http){
       return r.data
    })
    }
+////////////////////////
+///add player to team///
+////////////////////////
+   this.addTeamPlayer = function(player,teamID){
+      return $http({
+         method:'PUT'
+      ,  url:'/team/update/'+teamID
+      })
+   }
 ///////////////////////
 ///create new course///
 ///////////////////////

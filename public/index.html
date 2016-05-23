@@ -212,10 +212,12 @@
 <input class="player"type="text" ng-model="player.name.first" placeholder="First Name..."></input>
 <input class="player"type="text" ng-model="player.name.last"placeholder="Last Name"></input>
 <select name="sex" ng-model="player.sex">
+   <option value="">Select player sex</option>
   <option value="Male" selected>Male</option>
   <option value="Female">Female</option>
 </select>
 <select name="tee" ng-model="player.tee">
+   <option value="">Select player tee</option>
    <option value="Champion">Champion Tee</option>
    <option value="Blue">Blue Tee</option>
    <option value="White">White Tee</option>
@@ -231,9 +233,19 @@
 //////////////////////// -->
 <input ng-model="team.name" placeholder="Team name" />
    <button ng-click="teamCreate(team)">Create Team</button>
+<!--////////////////
+///repeat players///
+//////////////////// -->
 <div ng-repeat="player in players">
-{{player._id}}   {{player.name.first}}  {{player.name.last}}
-<button ng-click="addTeamPlayer(player)">Add to Team</button>
+   {{player._id}}   {{player.name.first}}  {{player.name.last}}
+<!--////////////////////////////////////////
+///add players to teams via dropdown menu///
+////////////////////////////////////////////  -->
+      <select ng-model="teamID" ng-change="change(teamID)">
+         <option value="">Select a Team</option>
+         <option ng-repeat="team in teams" value="{{team._id}}" ng-selected="team._id"
+         <button ng-click="addTeamPlayer(player,teamID)">Add to Team</button>
+      </select>
 </div>
 <hr />
 <!-- ///////////////////////
