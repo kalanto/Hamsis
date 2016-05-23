@@ -35,6 +35,17 @@ angular.module('app').service('mainService', function($http){
          }
       })
       }
+/////////////////////////////
+///get all player profiles///
+/////////////////////////////
+   this.getAllPlayers = function(){
+      return $http({
+         method:'GET'
+      ,  url:"/player/all"
+   }).then(function(r){
+      return r.data
+   })
+   }
 ///////////////////////
 ///create new course///
 ///////////////////////
@@ -234,5 +245,23 @@ this.teamCreate = function(team){
          name: team.name
       }
 })
+}
+////////////////////////
+///add player to team///
+////////////////////////
+this.addTeamPlayer = function(team, player){
+   return $http({
+      method: "PUT"
+   ,  url:"/team/update/:ID"
+   ,  data:{
+         name: team.name
+      ,  player:{
+            name:{
+               first:player.first.name
+            ,  last:player.last.name
+            }
+      }
+   }
+   })
 }
 })

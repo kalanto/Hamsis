@@ -3,7 +3,7 @@ var Schema = mongoose.Schema
 var teamSchema = new Schema({
    name:{type:String,required:true}
 ,  teamScore:{type:Number}
-,   player:{type:Schema.ObjectId,ref:'player'}
+,   players:[{type:Schema.ObjectId,ref:'player'}]
 
 })
 module.exports = mongoose.model('team',teamSchema)

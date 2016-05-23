@@ -18,6 +18,15 @@ $scope.submitScore = function(score){
 $scope.createPlayer = function(player){
    $scope.player=mainService.createPlayer(player)
 }
+/////////////////////////////
+///get all player profiles///
+/////////////////////////////
+$scope.getAllPlayers = function(){
+   mainService.getAllPlayers().then(function(r){
+      $scope.players = r
+   })
+}
+$scope.getAllPlayers()
 ///////////////////////////////
 ///create new course profile///
 ///////////////////////////////
@@ -28,9 +37,15 @@ $scope.courseCreate = function(course){
 /////////////////////////////
 ///create new team profile///
 /////////////////////////////
-$scope.teamCreate = function(team)
-{
+$scope.teamCreate = function(team){
    console.log(team)
    mainService.teamCreate(team)
+}
+/////////////////////////
+///add players to team///
+/////////////////////////
+$scope.addTeamPlayer = function(team, player){
+   consol.log(team)
+   mainService.addTeamPlayer(team, player)
 }
 })

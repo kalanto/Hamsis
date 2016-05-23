@@ -232,7 +232,7 @@
 <input ng-model="team.name" placeholder="Team name" />
    <button ng-click="teamCreate(team)">Create Team</button>
 <div ng-repeat="player in players">
-{{player.name.first}}  {{player.name.last}}
+{{player._id}}   {{player.name.first}}  {{player.name.last}}
 <button ng-click="addTeamPlayer(player)">Add to Team</button>
 </div>
 <hr />
