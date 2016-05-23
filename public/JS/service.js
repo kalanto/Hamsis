@@ -17,7 +17,9 @@ angular.module('app').service('mainService', function($http){
       }
       })
    }
-//creat a new player profile in the database
+////////////////////////////////////////////////
+///creat a new player profile in the database///
+////////////////////////////////////////////////
    this.createPlayer = function(player){
       return $http({
          method:'POST'
@@ -33,6 +35,9 @@ angular.module('app').service('mainService', function($http){
          }
       })
       }
+///////////////////////
+///create new course///
+///////////////////////
    this.courseCreate = function(course){
       return $http({
          method:'POST'
@@ -218,4 +223,16 @@ angular.module('app').service('mainService', function($http){
       }
       })
    }
+//////////////////////////////
+///create new team profile////
+//////////////////////////////
+this.teamCreate = function(team){
+   return $http({
+      method: "POST"
+   ,  url: "/team/create/"
+   ,  data:{
+         name: team.name
+      }
+})
+}
 })
