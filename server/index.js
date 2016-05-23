@@ -37,7 +37,7 @@ app.post('/player/create', player.playerCreate)
 app.get('/player/all', player.players)
 app.get('/player/:ID',player.playerID)
 app.put('/player/update/:ID', player.playerUpdate)
-app.delete('/score/delete/:ID',player.playerDelete)
+app.delete('/player/delete/:ID',player.playerDelete)
 ///////////////////////////
 ///endpoints for courses///
 ///////////////////////////

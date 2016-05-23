@@ -5,7 +5,7 @@ module.exports={
 courseCreate: function(req,res,next){
    console.log(req.body)
       var course = new Course(req.body)
-         course.save(function(e,r){
+         Course.save(function(e,r){
             console.log(e)
             if(e){
                res.status(500).send(e)
