@@ -27,7 +27,7 @@ mongoose.connect('mongodb://localhost/database')
 //////////////////////////
 app.post('/score/create', scoring.scoreCreate)
 app.get('/score/all', scoring.score)
-// app.get('/score/:ID', scoring.getScoreID)
+app.get('/score/:ID', scoring.scoreID)
 app.put('/score/update/:ID', scoring.scoreUpdate)
 app.delete('/score/delete/:ID',scoring.scoreDelete)
 /////////////////////////
