@@ -46,6 +46,14 @@ app.get('/course/info',course.course)
 app.get('/course/info/:ID',course.courseID)
 app.put('/course/update/:ID',course.courseUpdate)
 app.delete('/course/delete/:ID',course.courseDelete)
+/////////////////////////
+///endpoints for teams///
+/////////////////////////
+app.post('/team/create',team.teamCreate)
+app.get('/team/info',team.team)
+app.get('/team/info/:ID',team.teamID)
+app.put('/team/update/:ID',team.teamUpdate)
+app.delete('/team/delete/:ID',team.teamDelete)
 /////////////////
 ///funny stuff///
 /////////////////
