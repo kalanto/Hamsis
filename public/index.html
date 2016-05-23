@@ -215,7 +215,6 @@
   <option value="Male" selected>Male</option>
   <option value="Female">Female</option>
 </select>
-<!-- <input class="player"type="text" ng-model="player.sex" placeholder="M or F"></input> -->
 <select name="tee" ng-model="player.tee">
    <option value="Champion">Champion Tee</option>
    <option value="Blue">Blue Tee</option>
@@ -223,14 +222,23 @@
    <option value="Yellow">Yellow Tee</option>
    <option value="Red">Red Tee</option>
 </select>
-<!-- <input class="player"type="text" ng-model="player.tee" placeholder="Tee.."></input> -->
 <input class="player"type="email" ng-model="player.email" placeholder="email..."></input>
 <button ng-click="createPlayer(player)">Create New Player</button>
 <br>
 <hr/>
-<!-- ///////////////////////////
-//creat new courses here///
-/////////////////////////// -->
+<!-- ///////////////////
+////Create new Teams////
+//////////////////////// -->
+<input ng-model="team.name" placeholder="Team name" />
+   <button ng-click="teamCreate(team)">Create Team</button>
+<div ng-repeat="player in players">
+{{player.name.first}}  {{player.name.last}}
+<button ng-click="addTeamPlayer(player)">Add to Team</button>
+</div>
+<hr />
+<!-- ///////////////////////
+//create new courses here///
+//////////////////////////// -->
 Creat new course data below<br>
    <input type="text" ng-model="course.name" placeholder="Course name"></input>
 <br>
