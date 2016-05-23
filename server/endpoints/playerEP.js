@@ -3,7 +3,7 @@ module.exports={
 //create new player
 playerCreate: function(req,res,next){
    console.log(req.body)
-      var player = new player(req.body)
+      var player = new Player(req.body)
          player.save(function(e,r){
             console.log(e)
                if(e){
