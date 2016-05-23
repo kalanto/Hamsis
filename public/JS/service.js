@@ -46,6 +46,17 @@ angular.module('app').service('mainService', function($http){
       return r.data
    })
    }
+///////////////////////////
+///get all team profiles///
+///////////////////////////
+   this.getAllTeams = function(){
+      return $http({
+         method:'GET'
+      ,  url:'/team/all'
+   }).then(function(r){
+      return r.data
+   })
+   }
 ////////////////////////
 ///add player to team///
 ////////////////////////

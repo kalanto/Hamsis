@@ -59,4 +59,15 @@ teamCreate: function(req,res,next){
       }
    })
 }
+//add player to team
+,  addTeamPlayer: function(req,res){
+   Team.findOneAndUpdate(req.params.teamID, function(e,r){
+      if(e){
+         res.status(500).json(e)
+      }
+      else{
+         ///////////code here to add player to player array//////
+      }
+   })
+}
 }

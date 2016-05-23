@@ -27,6 +27,12 @@ $scope.getAllPlayers = function(){
    })
 }
 $scope.getAllPlayers()
+$scope.getAllTeams = function(){
+   mainService.getAllTeams().then(function(r){
+      $scope.teams = r
+   })
+}
+$scope.getAllTeams()
 ////////////////////////
 ///add player to team///
 ////////////////////////

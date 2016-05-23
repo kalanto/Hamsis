@@ -238,14 +238,15 @@
 //////////////////// -->
 <div ng-repeat="player in players">
    {{player._id}}   {{player.name.first}}  {{player.name.last}}
+
 <!--////////////////////////////////////////
 ///add players to teams via dropdown menu///
 ////////////////////////////////////////////  -->
-      <select ng-model="teamID" ng-change="change(teamID)">
+      <select ng-model="teamID">
          <option value="">Select a Team</option>
-         <option ng-repeat="team in teams" value="{{team._id}}" ng-selected="team._id"
-         <button ng-click="addTeamPlayer(player,teamID)">Add to Team</button>
+         <option ng-repeat="team in teams" value="{{team._id}}" ng-selected="team._id">{{team.name}}</option>
       </select>
+         <button ng-click="addTeamPlayer(player,teamID)">Add to Team</button>
 </div>
 <hr />
 <!-- ///////////////////////
