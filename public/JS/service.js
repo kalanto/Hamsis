@@ -34,7 +34,7 @@ angular.module('app').service('mainService', function($http){
    this.courseSelect=function(course){
       return $http({
          method:'GET'
-      ,  url:'/course/' + course
+      ,  url:'/course/' + course.id
    }).then(function(r){
       return r.data
    })

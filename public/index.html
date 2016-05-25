@@ -8,9 +8,9 @@
    <body ng-app="app">
       <div ng-controller="mainController" class="frontNineContainer">
          <h1>Score Caddie Live</h1>
-            <select name="course" ng-model="course">
+            <select ng-model="course.id" ng-options="course.name for course in courses">
                <option value="" selected="selected">Select a Course</option>
-               <option ng-repeat="course in courses" value="{{course._id}}">{{course.name}}{{course._id}}</option>
+               <option ng-repeat="course in courses" value="{{course._id}}">{{course.name}}</option>
             </select>
             <button ng-click="courseSelect(course)">Submit</button>
             {{cCourse.name}}
