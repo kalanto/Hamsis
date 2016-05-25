@@ -53,6 +53,7 @@ app.post('/team/create',team.teamCreate)
 app.get('/team/all',team.team)
 app.get('/team/:ID',team.teamID)
 app.put('/team/update/:ID',team.teamUpdate)
+app.put('/team/addplayer/:ID', team.addTeamPlayer)
 app.delete('/team/delete/:ID',team.teamDelete)
 /////////////////
 ///funny stuff///

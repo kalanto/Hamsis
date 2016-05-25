@@ -17,6 +17,28 @@ angular.module('app').service('mainService', function($http){
       }
       })
    }
+///////////////////////////////////////
+///get all courses for dropdown menu///
+///////////////////////////////////////
+   this.getCourses = function(){
+      return $http({
+         method:'GET'
+      ,  url:'/course/all'
+      }).then(function(r){
+         return r.data
+   })
+}
+/////////////////////////////
+///selected course to play///
+/////////////////////////////
+   this.courseSelect=function(course){
+      return $http({
+         method:'GET'
+      ,  url:'/course/' + course
+   }).then(function(r){
+      return r.data
+   })
+   }
 ////////////////////////////////////////////////
 ///creat a new player profile in the database///
 ////////////////////////////////////////////////
@@ -64,6 +86,11 @@ angular.module('app').service('mainService', function($http){
       return $http({
          method:'PUT'
       ,  url:'/team/update/'+teamID
+      ,  data: {
+            player:{
+               name:player.name
+            }
+         }
       })
    }
 ///////////////////////
@@ -74,7 +101,8 @@ angular.module('app').service('mainService', function($http){
          method:'POST'
       ,  url:'/course/create'
       ,  data:{
-            teeYardage: [{
+            name:course.name
+         ,  teeYardage: [{
                proTee:[course.teeYardage.proTee[0]
                   ,  course.teeYardage.proTee[1]
                   ,  course.teeYardage.proTee[2]
@@ -272,15 +300,9 @@ this.teamCreate = function(team){
 this.addTeamPlayer = function(team, player){
    return $http({
       method: "PUT"
-   ,  url:"/team/update/:ID"
+   ,  url:"/team/addplayer/"+team._id
    ,  data:{
-         name: team.name
-      ,  player:{
-            name:{
-               first:player.first.name
-            ,  last:player.last.name
-            }
-      }
+        player:player
    }
    })
 }

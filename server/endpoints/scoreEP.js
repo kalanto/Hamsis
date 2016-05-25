@@ -27,7 +27,7 @@ scoreCreate: function(req,res){
 }
 //get score by ID request
 ,  scoreID: function(req,res){
-Score.findOneAndUpdate(req.params.ID, function(e,r){
+Score.findOne(req.params.ID, function(e,r){
    if(e){
       res.status(500).json(e)
    }

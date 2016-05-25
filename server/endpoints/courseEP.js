@@ -5,7 +5,7 @@ module.exports={
 courseCreate: function(req,res,next){
    console.log(req.body)
       var course = new Course(req.body)
-         Course.save(function(e,r){
+         course.save(function(e,r){
             console.log(e)
             if(e){
                res.status(500).send(e)
@@ -28,7 +28,7 @@ courseCreate: function(req,res,next){
 }
 //get course by ID request
 ,  courseID: function(req,res){
-   Course.findOneAndUpdate(req.params.ID, function(e,r){
+   Course.findOne(req.params.id, function(e,r){
       if(e){
          res.status(500).json(e)
       }

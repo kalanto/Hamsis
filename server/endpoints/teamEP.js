@@ -28,7 +28,7 @@ teamCreate: function(req,res,next){
 }
 //get team by ID request
 ,  teamID: function(req,res){
-   Team.findOneAndUpdate(req.params.ID, function(e,r){
+   Team.findOne(req.params.ID, function(e,r){
       if(e){
          res.status(500).json(e)
       }
@@ -65,8 +65,11 @@ teamCreate: function(req,res,next){
       if(e){
          res.status(500).json(e)
       }
+      ////push player onto team players array
       else{
-         ///////////code here to add player to player array//////
+         r.players.push()
+         r.save()
+         return r.data
       }
    })
 }

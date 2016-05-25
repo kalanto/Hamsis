@@ -12,6 +12,24 @@ $scope.updateScore = function(score){
 $scope.submitScore = function(score){
    $scope.total=mainService.submitScore(score)
 }
+//////////////////////////////
+///get courses for dropdown///
+//////////////////////////////
+$scope.getCourses = function(){
+   mainService.getCourses().then(function(r){
+      $scope.courses = r
+   })
+}
+$scope.getCourses()
+/////////////////////////////
+///select course from menu///
+/////////////////////////////
+$scope.courseSelect=function(course){
+   mainService.courseSelect(course).then(function(r){
+      console.log(r)
+      $scope.cCourse = r
+   })
+}
 ///////////////////////////////
 ///create new player profile///
 ///////////////////////////////
@@ -56,8 +74,8 @@ $scope.teamCreate = function(team){
 /////////////////////////
 ///add players to team///
 /////////////////////////
-$scope.addTeamPlayer = function(team, player){
-   consol.log(team)
-   mainService.addTeamPlayer(team, player)
+$scope.addTeamPlayer = function(player, team){
+   console.log(team)
+   mainService.addTeamPlayer(player, team)
 }
 })

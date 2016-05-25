@@ -6,8 +6,14 @@
       <title>Score Caddie Live</title>
    </head>
    <body ng-app="app">
-      <h1>Score Caddie Live</h1>
       <div ng-controller="mainController" class="frontNineContainer">
+         <h1>Score Caddie Live</h1>
+            <select name="course" ng-model="course">
+               <option value="" selected="selected">Select a Course</option>
+               <option ng-repeat="course in courses" value="{{course._id}}">{{course.name}}{{course._id}}</option>
+            </select>
+            <button ng-click="courseSelect(course)">Submit</button>
+            {{cCourse.name}}
          <table class="frontNine">
             <tr class="frontNine">
                <td class="frontNine">Holes</td>
@@ -33,8 +39,8 @@
                <td class="backNine">Total</td>
             </tr>
             <tr class="frontNine">
-               <td class="frontNine">Aggie</td>
-               <td class="frontNine">430</td>
+               <td class="frontNine">Champion</td>
+               <td class="frontNine">{{cCourse.teeYardage.proTee[0]}}</td>
                <td class="frontNine">216</td>
                <td class="frontNine">360</td>
                <td class="frontNine">507</td>
@@ -236,17 +242,17 @@
 <!--////////////////
 ///repeat players///
 //////////////////// -->
-<div ng-repeat="player in players">
+<div ng-repeat="player in players" ng-model="player">
    {{player._id}}   {{player.name.first}}  {{player.name.last}}
 
 <!--////////////////////////////////////////
 ///add players to teams via dropdown menu///
 ////////////////////////////////////////////  -->
-      <select ng-model="teamID">
-         <option value="">Select a Team</option>
-         <option ng-repeat="team in teams" value="{{team._id}}" ng-selected="team._id">{{team.name}}</option>
+      <select ng-model="team">
+         <option value="" selected="selected">Select a Team</option>
+         <option ng-repeat="team in teams" value="{{team._id}}">{{team.name}}</option>
       </select>
-         <button ng-click="addTeamPlayer(player,teamID)">Add to Team</button>
+         <button ng-click="addTeamPlayer(player,team)">Add to Team</button>
 </div>
 <hr />
 <!-- ///////////////////////
