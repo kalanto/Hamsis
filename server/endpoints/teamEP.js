@@ -28,7 +28,7 @@ teamCreate: function(req,res,next){
 }
 //get team by ID request
 ,  teamID: function(req,res){
-   Team.findOne(req.params.ID, function(e,r){
+   Team.findbyId(req.params.ID, function(e,r){
       if(e){
          res.status(500).json(e)
       }
@@ -61,15 +61,13 @@ teamCreate: function(req,res,next){
 }
 //add player to team
 ,  addTeamPlayer: function(req,res){
-   Team.findOneAndUpdate(req.params.teamID, function(e,r){
+   Team.findById(req.params.teamID, function(e,r){
       if(e){
          res.status(500).json(e)
       }
       ////push player onto team players array
       else{
-         r.players.push()
-         r.save()
-         return r.data
+         ////function goes here because computer says NOOOOOO
       }
    })
 }
