@@ -8,9 +8,8 @@
    <body ng-app="app">
       <div ng-controller="mainController" class="frontNineContainer">
          <h1>Score Caddie Live</h1>
-            <select ng-model="course.id" ng-options="course.name for course in courses">
+            <select ng-model="course" ng-options="course.name for course in courses">
                <option value="" selected="selected">Select a Course</option>
-               <option ng-repeat="course in courses" value="{{course._id}}">{{course.name}}</option>
             </select>
             <button ng-click="courseSelect(course)">Submit</button>
             {{cCourse.name}}
@@ -39,115 +38,202 @@
                <td class="backNine">Total</td>
             </tr>
             <tr class="frontNine">
-               <td class="frontNine">Champion</td>
-               <td class="frontNine">{{cCourse.teeYardage.proTee[0]}}</td>
-               <td class="frontNine">216</td>
-               <td class="frontNine">360</td>
-               <td class="frontNine">507</td>
-               <td class="frontNine">373</td>
-               <td class="frontNine">160</td>
-               <td class="frontNine">441</td>
-               <td class="frontNine">495</td>
-               <td class="frontNine">419</td>
+               <td class="frontNine">Championship</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].proTee[0]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].proTee[1]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].proTee[2]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].proTee[3]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].proTee[4]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].proTee[5]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].proTee[6]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].proTee[7]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].proTee[8]}}</td>
                <td class="backNine"></td>
-               <td class="backNine">418</td>
-               <td class="backNine">197</td>
-               <td class="backNine">519</td>
-               <td class="backNine">445</td>
-               <td class="backNine">406</td>
-               <td class="backNine">572</td>
-               <td class="backNine">435</td>
-               <td class="backNine">225</td>
-               <td class="backNine">460</td>
+               <td class="backNine">{{cCourse.teeYardage[0].proTee[9]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].proTee[10]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].proTee[11]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].proTee[12]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].proTee[13]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].proTee[14]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].proTee[15]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].proTee[16]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].proTee[17]}}</td>
             </tr>
             <tr class="frontNine">
-               <td class="frontNine">Champions</td>
-               <td class="frontNine">349</td>
-               <td class="frontNine">182</td>
-               <td class="frontNine">355</td>
-               <td class="frontNine">488</td>
-               <td class="frontNine">360</td>
-               <td class="frontNine">145</td>
-               <td class="frontNine">387</td>
-               <td class="frontNine">488</td>
-               <td class="frontNine">392</td>
+               <td class="frontNine">Blue</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].blueTee[0]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].blueTee[1]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].blueTee[2]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].blueTee[3]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].blueTee[4]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].blueTee[5]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].blueTee[6]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].blueTee[7]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].blueTee[8]}}</td>
                <td class="backNine"></td>
-               <td class="backNine">398</td>
-               <td class="backNine">178</td>
-               <td class="backNine">497</td>
-               <td class="backNine">419</td>
-               <td class="backNine">383</td>
-               <td class="backNine">537</td>
-               <td class="backNine">424</td>
-               <td class="backNine">188</td>
-               <td class="backNine">415</td>
+               <td class="backNine">{{cCourse.teeYardage[0].blueTee[9]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].blueTee[10]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].blueTee[11]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].blueTee[12]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].blueTee[13]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].blueTee[14]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].blueTee[15]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].blueTee[16]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].blueTee[17]}}</td>
             </tr>
             <tr class="frontNine">
-               <td class="frontNine">Masters</td>
-               <td class="frontNine">349</td>
-               <td class="frontNine">170</td>
-               <td class="frontNine">350</td>
-               <td class="frontNine">476</td>
-               <td class="frontNine">348</td>
-               <td class="frontNine">133</td>
-               <td class="frontNine">373</td>
-               <td class="frontNine">483</td>
-               <td class="frontNine">324</td>
+               <td class="frontNine">White</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].whiteTee[0]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].whiteTee[1]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].whiteTee[2]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].whiteTee[3]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].whiteTee[4]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].whiteTee[5]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].whiteTee[6]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].whiteTee[7]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].whiteTee[8]}}</td>
                <td class="backNine"></td>
-               <td class="backNine">370</td>
-               <td class="backNine">160</td>
-               <td class="backNine">473</td>
-               <td class="backNine">357</td>
-               <td class="backNine">365</td>
-               <td class="backNine">489</td>
-               <td class="backNine">413</td>
-               <td class="backNine">154</td>
-               <td class="backNine">404</td>
+               <td class="backNine">{{cCourse.teeYardage[0].whiteTee[9]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].whiteTee[10]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].whiteTee[11]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].whiteTee[12]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].whiteTee[13]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].whiteTee[14]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].whiteTee[15]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].whiteTee[16]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].whiteTee[17]}}</td>
             </tr>
             <tr class="frontNine">
-               <td class="frontNine">Men's HDCP</td>
-               <td class="frontNine">3</td>
-               <td class="frontNine">13</td>
-               <td class="frontNine">15</td>
-               <td class="frontNine">7</td>
-               <td class="frontNine">11</td>
-               <td class="frontNine">17</td>
-               <td class="frontNine">1</td>
-               <td class="frontNine">9</td>
-               <td class="frontNine">5</td>
+               <td class="frontNine">Yellow</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].yellowTee[0]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].yellowTee[1]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].yellowTee[2]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].yellowTee[3]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].yellowTee[4]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].yellowTee[5]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].yellowTee[6]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].yellowTee[7]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].yellowTee[8]}}</td>
                <td class="backNine"></td>
-               <td class="backNine">12</td>
-               <td class="backNine">18</td>
-               <td class="backNine">8</td>
-               <td class="backNine">10</td>
-               <td class="backNine">16</td>
-               <td class="backNine">6</td>
-               <td class="backNine">2</td>
-               <td class="backNine">14</td>
-               <td class="backNine">4</td>
-
+               <td class="backNine">{{cCourse.teeYardage[0].yellowTee[9]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].yellowTee[10]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].yellowTee[11]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].yellowTee[12]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].yellowTee[13]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].yellowTee[14]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].yellowTee[15]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].yellowTee[16]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].yellowTee[17]}}</td>
             </tr>
             <tr class="frontNine">
-               <td class="frontNine">Men's Par</td>
-               <td class="frontNine">4</td>
-               <td class="frontNine">3</td>
-               <td class="frontNine">4</td>
-               <td class="frontNine">5</td>
-               <td class="frontNine">4</td>
-               <td class="frontNine">3</td>
-               <td class="frontNine">4</td>
-               <td class="frontNine">5</td>
-               <td class="frontNine">4</td>
+               <td class="frontNine">Red</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].redTee[0]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].redTee[1]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].redTee[2]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].redTee[3]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].redTee[4]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].redTee[5]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].redTee[6]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].redTee[7]}}</td>
+               <td class="frontNine">{{cCourse.teeYardage[0].redTee[8]}}</td>
                <td class="backNine"></td>
-               <td class="backNine">4</td>
-               <td class="backNine">3</td>
-               <td class="backNine">5</td>
-               <td class="backNine">4</td>
-               <td class="backNine">4</td>
-               <td class="backNine">5</td>
-               <td class="backNine">4</td>
-               <td class="backNine">3</td>
-               <td class="backNine">4</td>
+               <td class="backNine">{{cCourse.teeYardage[0].redTee[9]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].redTee[10]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].redTee[11]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].redTee[12]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].redTee[13]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].redTee[14]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].redTee[15]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].redTee[16]}}</td>
+               <td class="backNine">{{cCourse.teeYardage[0].redTee[17]}}</td>
+            </tr>
+            <tr class="frontNine">
+               <td class="frontNine">M-HDCP</td>
+               <td class="frontNine">{{cCourse.handicap[0].menHDCP[0]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].menHDCP[1]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].menHDCP[2]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].menHDCP[3]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].menHDCP[4]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].menHDCP[5]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].menHDCP[6]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].menHDCP[7]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].menHDCP[8]}}</td>
+               <td class="backNine"></td>
+               <td class="backNine">{{cCourse.handicap[0].menHDCP[9]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].menHDCP[10]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].menHDCP[11]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].menHDCP[12]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].menHDCP[13]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].menHDCP[14]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].menHDCP[15]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].menHDCP[16]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].menHDCP[17]}}</td>
+            </tr>
+            <tr class="frontNine">
+               <td class="frontNine">W-HDCP</td>
+               <td class="frontNine">{{cCourse.handicap[0].womenHDCP[0]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].womenHDCP[1]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].womenHDCP[2]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].womenHDCP[3]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].womenHDCP[4]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].womenHDCP[5]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].womenHDCP[6]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].womenHDCP[7]}}</td>
+               <td class="frontNine">{{cCourse.handicap[0].womenHDCP[8]}}</td>
+               <td class="backNine"></td>
+               <td class="backNine">{{cCourse.handicap[0].womenHDCP[9]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].womenHDCP[10]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].womenHDCP[11]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].womenHDCP[12]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].womenHDCP[13]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].womenHDCP[14]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].womenHDCP[15]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].womenHDCP[16]}}</td>
+               <td class="backNine">{{cCourse.handicap[0].womenHDCP[17]}}</td>
+            </tr>
+            <tr class="frontNine">
+               <td class="frontNine">M-Par</td>
+               <td class="frontNine">{{cCourse.par[0].menPar[0]}}</td>
+               <td class="frontNine">{{cCourse.par[0].menPar[1]}}</td>
+               <td class="frontNine">{{cCourse.par[0].menPar[2]}}</td>
+               <td class="frontNine">{{cCourse.par[0].menPar[3]}}</td>
+               <td class="frontNine">{{cCourse.par[0].menPar[4]}}</td>
+               <td class="frontNine">{{cCourse.par[0].menPar[5]}}</td>
+               <td class="frontNine">{{cCourse.par[0].menPar[6]}}</td>
+               <td class="frontNine">{{cCourse.par[0].menPar[7]}}</td>
+               <td class="frontNine">{{cCourse.par[0].menPar[8]}}</td>
+               <td class="backNine"></td>
+               <td class="backNine">{{cCourse.par[0].menPar[9]}}</td>
+               <td class="backNine">{{cCourse.par[0].menPar[10]}}</td>
+               <td class="backNine">{{cCourse.par[0].menPar[11]}}</td>
+               <td class="backNine">{{cCourse.par[0].menPar[12]}}</td>
+               <td class="backNine">{{cCourse.par[0].menPar[13]}}</td>
+               <td class="backNine">{{cCourse.par[0].menPar[14]}}</td>
+               <td class="backNine">{{cCourse.par[0].menPar[15]}}</td>
+               <td class="backNine">{{cCourse.par[0].menPar[16]}}</td>
+               <td class="backNine">{{cCourse.par[0].menPar[17]}}</td>
+            </tr>
+            <tr class="frontNine">
+               <td class="frontNine">W-Par</td>
+               <td class="frontNine">{{cCourse.par[0].womenPar[0]}}</td>
+               <td class="frontNine">{{cCourse.par[0].womenPar[1]}}</td>
+               <td class="frontNine">{{cCourse.par[0].womenPar[2]}}</td>
+               <td class="frontNine">{{cCourse.par[0].womenPar[3]}}</td>
+               <td class="frontNine">{{cCourse.par[0].womenPar[4]}}</td>
+               <td class="frontNine">{{cCourse.par[0].womenPar[5]}}</td>
+               <td class="frontNine">{{cCourse.par[0].womenPar[6]}}</td>
+               <td class="frontNine">{{cCourse.par[0].womenPar[7]}}</td>
+               <td class="frontNine">{{cCourse.par[0].womenPar[8]}}</td>
+               <td class="backNine"></td>
+               <td class="backNine">{{cCourse.par[0].womenPar[9]}}</td>
+               <td class="backNine">{{cCourse.par[0].womenPar[10]}}</td>
+               <td class="backNine">{{cCourse.par[0].womenPar[11]}}</td>
+               <td class="backNine">{{cCourse.par[0].womenPar[12]}}</td>
+               <td class="backNine">{{cCourse.par[0].womenPar[13]}}</td>
+               <td class="backNine">{{cCourse.par[0].womenPar[14]}}</td>
+               <td class="backNine">{{cCourse.par[0].womenPar[15]}}</td>
+               <td class="backNine">{{cCourse.par[0].womenPar[16]}}</td>
+               <td class="backNine">{{cCourse.par[0].womenPar[17]}}</td>
             </tr>
             <td>Name</td>
                <td><input class="score" ng-model="score[0]" ng-change="updateScore(score)" type="number">
@@ -242,17 +328,20 @@
 <!--////////////////
 ///repeat players///
 //////////////////// -->
-<div ng-repeat="player in players" ng-model="player">
-   {{player._id}}   {{player.name.first}}  {{player.name.last}}
+<br>
+<hr />
+<select ng-options="player.name.first for player in players" ng-model="player">
+   <option value="" selected="selected">Select a Player</option>
+</select>
 
 <!--////////////////////////////////////////
 ///add players to teams via dropdown menu///
 ////////////////////////////////////////////  -->
-      <select ng-model="team">
+      <select ng-model="team" ng-options="team.name for team in teams">
          <option value="" selected="selected">Select a Team</option>
-         <option ng-repeat="team in teams" value="{{team._id}}">{{team.name}}</option>
+         <!-- <option ng-repeat="team in teams" value="{{team._id}}">{{team.name}}</option> -->
       </select>
-         <button ng-click="addTeamPlayer(player,team)">Add to Team</button>
+         <button ng-click="addTeamPlayer(team,player)">Add to Team</button>
 </div>
 <hr />
 <!-- ///////////////////////
