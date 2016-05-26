@@ -34,7 +34,7 @@ angular.module('app').service('mainService', function($http){
    this.courseSelect=function(course){
       return $http({
          method:'GET'
-      ,  url:'/course/' + course.id
+      ,  url:'/course/' + course._id
    }).then(function(r){
       return r.data
    })
@@ -82,10 +82,10 @@ angular.module('app').service('mainService', function($http){
 ////////////////////////
 ///add player to team///
 ////////////////////////
-   this.addTeamPlayer = function(player,teamID){
+   this.addTeamPlayer = function(team, player){
       return $http({
          method:'PUT'
-      ,  url:'/team/update/'+teamID
+      ,  url:'/team/addplayer/'+team._id
       ,  data: {
             player:{
                name:player.name
