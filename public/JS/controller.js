@@ -54,28 +54,29 @@ $scope.getAllTeams()
 ////////////////////////
 ///add player to team///
 ////////////////////////
-$scope.addTeamPlayer = function(player,teamID){
-   mainService.addTeamPlayer(player,teamID)
+$scope.addTeamPlayer = function(player,team){
+   console.log(player)
+   console.log(team)
+   mainService.addTeamPlayer(player,team)
 }
 ///////////////////////////////
 ///create new course profile///
 ///////////////////////////////
 $scope.courseCreate = function(course){
-   console.log(course);
    mainService.courseCreate(course)
 }
 /////////////////////////////
 ///create new team profile///
 /////////////////////////////
 $scope.teamCreate = function(team){
-   console.log(team)
    mainService.teamCreate(team)
 }
 /////////////////////////
 ///add players to team///
 /////////////////////////
-$scope.addTeamPlayer = function(player, team){
+$scope.addTeamPlayer = function(team, player){
    console.log(team)
-   mainService.addTeamPlayer(player, team)
+   console.log(player)
+   mainService.addTeamPlayer(team, player)
 }
 })
