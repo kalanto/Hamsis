@@ -61,13 +61,16 @@ teamCreate: function(req,res,next){
 }
 //add player to team
 ,  addTeamPlayer: function(req,res){
-   Team.findById(req.params.teamID, function(e,r){
+   Team.findOneAndUpdate(req.params.ID, function(e,r){
       if(e){
          res.status(500).json(e)
       }
       ////push player onto team players array
       else{
-         ////function goes here?!?!!!!
+         console.log(req.body)
+         req.body.team.players.push()
+         r.save()
+         return res.send(r.data)
       }
    })
 }
