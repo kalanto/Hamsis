@@ -1,6 +1,5 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
-
 var playerSchema = new Schema ({
    name: {
       first: {type:String,required:true}
