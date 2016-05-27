@@ -28,7 +28,7 @@ courseCreate: function(req,res,next){
 }
 //get course by ID request
 ,  courseID: function(req,res){
-   Course.findOneById(req.params.ID, function(e,r){
+   Course.findById(req.params.ID, function(e,r){
       if(e){
          res.status(500).json(e)
       }
