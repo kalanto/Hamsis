@@ -330,7 +330,7 @@
 //////////////////// -->
 <br>
 <hr />
-<select ng-options="player.name.first for player in players" ng-model="player">
+<select ng-options="player as player.name.first + ' ' + player.name.last for player in players"  ng-model="player">
    <option value="" selected="selected">Select a Player</option>
 </select>
 
