@@ -67,10 +67,7 @@ teamCreate: function(req,res,next){
       }
       ////push player onto team players array
       else{
-         console.log(req.body)
-         req.body.team.players.push()
-         r.save()
-         return res.send(r.data)
+         ////what goes here??///
       }
    })
 }

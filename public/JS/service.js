@@ -87,9 +87,7 @@ angular.module('app').service('mainService', function($http){
          method:'PUT'
       ,  url:'/team/addplayer/'+team._id
       ,  data: {
-            player:{
-               name:player.name
-            }
+            player:player._id
          }
       })
    }
