@@ -1,4 +1,5 @@
 var Team = require('../../server/schema/teamSchema.js')
+var Players = require('../../server/schema/playerSchema.js')
 module.exports={
 
 //create new team
@@ -61,14 +62,8 @@ teamCreate: function(req,res,next){
 }
 //add player to team
 ,  addTeamPlayer: function(req,res){
-   Team.findOneAndUpdate(req.params.ID, function(e,r){
-      if(e){
-         res.status(500).json(e)
-      }
-      ////push player onto team players array
-      else{
-         ////what goes here??///
-      }
-   })
+   Team.findOneAndUpdate(req.params.ID).populate('Players').exec(function(e,player){
+if(e)res.send(e)
+})
 }
 }
