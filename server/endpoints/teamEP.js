@@ -62,7 +62,7 @@ teamCreate: function(req,res,next){
 }
 //add player to team
 ,  addTeamPlayer: function(req,res){
-   Team.findOneAndUpdate(req.params.ID).populate('Players').exec(function(e,player){
+   Team.findByIdAndUpdate(req.params.ID,{$push:{players:req.body.player._id}}).populate('Players').exec(function(e,player){
 if(e)res.send(e)
 })
 }
