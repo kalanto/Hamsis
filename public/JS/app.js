@@ -17,5 +17,10 @@ angular.module('app',['ui.router'])
       url:'/team'
    ,  templateUrl:'views/team.html'
    })
+   .state('addplayer',{
+      url:'/addTeamPlayer'
+   ,  templateUrl:"views/addteamplayer.html"
+   })
+
    $urlRouterProvider.otherwise('/')
 })
