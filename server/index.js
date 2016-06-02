@@ -34,6 +34,7 @@ app.delete('/score/delete/:ID',scoring.scoreDelete)
 ///endpoints for players//
 /////////////////////////
 app.post('/player/create', player.playerCreate)
+app.post('/player/scoresubmit/:ID', player.playerScoreSubmit)
 app.get('/player/all', player.players)
 app.get('/player/:ID',player.playerID)
 app.put('/player/update/:ID', player.playerUpdate)

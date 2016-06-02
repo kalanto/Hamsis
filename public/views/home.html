@@ -225,7 +225,11 @@
    <td class="backNine">{{cCourse.par[0].womenPar[16]}}</td>
    <td class="backNine">{{cCourse.par[0].womenPar[17]}}</td>
 </tr>
-<td>Name</td>
+<td>
+   <select ng-options="player as player.name.first + ' ' + player.name.last for player in players"  ng-model="player">
+   <option value="" selected="selected">Select a Player</option>
+   </select>
+</td>
    <td><input class="score" ng-model="score[0]" ng-change="updateScore(score)" type="number">
       </input>
    </td>
@@ -285,5 +289,5 @@
 </tr>
 </table>
 
-<button ng-click="submitScore(score)">Submit Final Score</button>
+<button ng-click="submitScore(player,score,course)">Submit Final Score</button>
 <br>

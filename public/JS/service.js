@@ -8,12 +8,14 @@ angular.module('app').service('mainService', function($http){
    return playerScore
    }
 //submit score by player (later tie into ng-repeat) so this button will appear at the end of each player row(right hand side) and submit for that specific player
-   this.submitScore = function(score){
+   this.submitScore = function(player,score,course){
       return $http({
          method:'POST'
-      ,  url:'/score/create'
+      ,  url:'/player/scoresubmit/' + player._id
       ,  data: {
-            score: score
+            player:player
+         ,  score:score
+         ,  course:course
       }
       })
    }

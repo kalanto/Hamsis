@@ -1,4 +1,5 @@
 var Player = require('../../server/schema/playerSchema.js')
+var Score = require('../../server/schema/scoreSchema.js')
 module.exports={
 //create new player
 playerCreate: function(req,res,next){
@@ -27,7 +28,7 @@ playerCreate: function(req,res,next){
 }
 //get player by ID request
 ,  playerID: function(req,res){
-Player.findOne(req.params.ID, function(e,r){
+Player.findById(req.params.ID, function(e,r){
    if(e){
       res.status(500).json(e)
    }
@@ -38,7 +39,7 @@ Player.findOne(req.params.ID, function(e,r){
 }
 //update player by ID request
 ,  playerUpdate: function(req,res){
-   Player.findOneAndUpdate(req.params.ID, function(e,r){
+   Player.findByIdandUpdate(req.params.ID, function(e,r){
       if(e){
          res.status(500).json(e)
       }
@@ -56,6 +57,17 @@ Player.findOne(req.params.ID, function(e,r){
       else{
          return res.send(r)
       }
+   })
+}
+//submit players score after round is finished
+, playerScoreSubmit: function(req, res){
+   Player.findByIdAndUpdate(req.params.ID,
+      {$push:{
+         score:req.body.score
+      ,  course:req.body.course._id}})
+      .populate('Score','Course')
+      .exec(function(e,score,course){
+      if(e)res.send(e)
    })
 }
 }

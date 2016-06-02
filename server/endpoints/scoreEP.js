@@ -4,7 +4,7 @@ module.exports ={
 scoreCreate: function(req,res){
    console.log(req.body)
       var score = new Score(req.body)
-         Score.save(function(e,r){
+         score.save(function(e,r){
             console.log(e)
             if(e){
              res.status(500).send(e)

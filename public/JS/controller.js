@@ -9,8 +9,11 @@ $scope.updateScore = function(score){
 /////////////////////////////////
 //submit final score for round///
 /////////////////////////////////
-$scope.submitScore = function(score){
-   $scope.total=mainService.submitScore(score)
+$scope.submitScore = function(player,score,course){
+   console.log(player)
+   console.log(score)
+   console.log(course)
+   mainService.submitScore(player,score,course)
 }
 //////////////////////////////
 ///get courses for dropdown///
