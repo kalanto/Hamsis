@@ -59,15 +59,22 @@ Player.findById(req.params.ID, function(e,r){
       }
    })
 }
-//submit players score after round is finished
+//submit players score after round is finished. this creats a new scoreID and assigns it to the player as a reference with the course ID
 , playerScoreSubmit: function(req, res){
-   Player.findByIdAndUpdate(req.params.ID,
-      {$push:{
-         score:req.body.score
-      ,  course:req.body.course._id}})
-      .populate('Score','Course')
-      .exec(function(e,score,course){
-      if(e)res.send(e)
+   Score.create({score:req.body.score} , function(err,newScore){
+      if(err) return res.send(err);
+      console.log(newScore);
+      Player.findByIdAndUpdate(req.params.ID,
+         {$push:{
+            score:newScore._id
+         ,  course:req.body.course._id}})
+         .populate('Score','Course')
+         .exec(function(e,score,course){
+         if(e)res.send(e)
+      })
    })
 }
+
+
+
 }
