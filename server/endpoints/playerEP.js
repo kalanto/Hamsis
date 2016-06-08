@@ -1,5 +1,6 @@
 var Player = require('../../server/schema/playerSchema.js')
 var Score = require('../../server/schema/scoreSchema.js')
+var Promise = require('bluebird')
 module.exports={
 //create new player
 playerCreate: function(req,res,next){
@@ -68,8 +69,8 @@ Player.findById(req.params.ID, function(e,r){
       console.log(newScore);
       Player.findByIdAndUpdate(req.params.ID,
          {$push:{scores:[{
-            score:newScore._id
-         ,  course:req.body.course._id}]}
+            score:newScore
+         ,  course:req.body.course}]}
       })
          .populate('Score','Course')
          .exec(function(e,score,course){
@@ -78,9 +79,12 @@ Player.findById(req.params.ID, function(e,r){
    })
 }
 , getScores: function(req,res){
-   Player.findById(req.params.ID).populate('scores.score','scores.course').exec(function(e,player){
+   Player.findById(req.params.ID).populate('scores.score scores.course').exec(function(e,player){
          if(e) return res.send(e)
-         else{res.send(player)}
+
+         else{
+
+            res.send(player)}
       }
    )}
 /////////////////////////////

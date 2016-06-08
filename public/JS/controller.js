@@ -65,6 +65,7 @@ $scope.deletePlayer = function(player){
 ///////////////////////////
 $scope.getScores=function(player){
    mainService.getScores(player).then(function(r){
+      console.log(r)
       $scope.playerScores = r
    })
 }

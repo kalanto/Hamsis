@@ -30,6 +30,15 @@ angular.module('app').service('mainService', function($http){
       return r.data
    })
    }
+   this.printScores = function(r){
+      return $http({
+         method:'GET'
+      , url:'/score/:ID'
+      ,  data:r
+   }).then(function(r){
+      return r.data
+   })
+   }
 ///////////////////////////////
 ///update player information///
 ///////////////////////////////
