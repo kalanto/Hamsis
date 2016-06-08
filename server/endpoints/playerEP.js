@@ -50,11 +50,13 @@ Player.findById(req.params.ID, function(e,r){
 }
 //delete player by ID request
 ,  playerDelete: function(req,res){
-   Player.findOneAndRemove(req.params.ID, function(e,r){
+   console.log(req.body)
+   Player.findByIdAndRemove(req.params.ID,req.body,function(e,r){
       if(e){
          res.status(500).json(e)
       }
       else{
+         console.log('success')
          return res.send(r)
       }
    })

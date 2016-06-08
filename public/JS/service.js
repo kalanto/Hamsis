@@ -34,11 +34,23 @@ angular.module('app').service('mainService', function($http){
 ///update player information///
 ///////////////////////////////
    this.updatePlayer = function(player){
-      console.log('hit service')
       return $http({
          method:'PUT'
       ,  url:'/player/update/' + player._id
       ,  data:player
+   }).then(function(r){
+      return r.data
+   })
+   }
+////////////////////
+///delete player////
+////////////////////
+   this.deletePlayer=function(player){
+      console.log('hit')
+      return $http({
+         method:'DELETE'
+      , url:'/player/delete/'+player._id
+      , data:player
    }).then(function(r){
       return r.data
    })

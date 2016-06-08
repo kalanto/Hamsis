@@ -43,10 +43,21 @@ $scope.getAllPlayers = function(){
       $scope.players = r
    })
 }
+///////////////////
+///update player///
+///////////////////
 $scope.updatePlayer = function(player){
-   console.log(player)
    mainService.updatePlayer(player).then(function(r){
       $scope.updated = r
+   })
+}
+///////////////////
+///delete player///
+///////////////////
+$scope.deletePlayer = function(player){
+   console.log(player)
+   mainService.deletePlayer(player).then(function(r){
+      $scope.deleted=r
    })
 }
 ///////////////////////////
