@@ -10,9 +10,6 @@ $scope.updateScore = function(score){
 //submit final score for round///
 /////////////////////////////////
 $scope.submitScore = function(player,score,course){
-   console.log(player)
-   console.log(score)
-   console.log(course)
    mainService.submitScore(player,score,course)
 }
 //////////////////////////////
@@ -29,7 +26,6 @@ $scope.getCourses()
 /////////////////////////////
 $scope.courseSelect=function(course){
    mainService.courseSelect(course).then(function(r){
-      console.log(r)
       $scope.cCourse = r
    })
 }
@@ -47,6 +43,20 @@ $scope.getAllPlayers = function(){
       $scope.players = r
    })
 }
+$scope.updatePlayer = function(player){
+   console.log(player)
+   mainService.updatePlayer(player).then(function(r){
+      $scope.updated = r
+   })
+}
+///////////////////////////
+///get scores for player///
+///////////////////////////
+$scope.getScores=function(player){
+   mainService.getScores(player).then(function(r){
+      $scope.playerScores = r
+   })
+}
 $scope.getAllPlayers()
 $scope.getAllTeams = function(){
    mainService.getAllTeams().then(function(r){
@@ -58,8 +68,6 @@ $scope.getAllTeams()
 ///add player to team///
 ////////////////////////
 $scope.addTeamPlayer = function(player,team){
-   console.log(player)
-   console.log(team)
    mainService.addTeamPlayer(player,team)
 }
 ///////////////////////////////
@@ -78,8 +86,6 @@ $scope.teamCreate = function(team){
 ///add players to team///
 /////////////////////////
 $scope.addTeamPlayer = function(team, player){
-   console.log(team)
-   console.log(player)
    mainService.addTeamPlayer(team, player)
 }
 })

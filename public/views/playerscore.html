@@ -1,0 +1,5 @@
+<select ng-options="player as player.name.first + ' ' + player.name.last for player in players"  ng-model="player">
+   <option value="" selected="selected">Select a Player</option>
+</select>
+   <button ng-click="getScores(player)">Get Player Score's</button>
+<div>{{playerScores}}</div>

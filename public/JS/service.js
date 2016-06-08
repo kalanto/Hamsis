@@ -19,6 +19,31 @@ angular.module('app').service('mainService', function($http){
       }
       })
    }
+////////////////////////////////////////////////////////////////
+///get player scores from drop down menu on playerscores page///
+////////////////////////////////////////////////////////////////
+   this.getScores = function(player){
+      return $http({
+         method:'GET'
+      ,  url:'/player/score/'+ player._id
+   }).then(function(r){
+      return r.data
+   })
+   }
+///////////////////////////////
+///update player information///
+///////////////////////////////
+   this.updatePlayer = function(player){
+      console.log('hit service')
+      return $http({
+         method:'PUT'
+      ,  url:'/player/update/' + player._id
+      ,  data:player
+   }).then(function(r){
+      return r.data
+   })
+   }
+
 ///////////////////////////////////////
 ///get all courses for dropdown menu///
 ///////////////////////////////////////

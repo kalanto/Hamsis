@@ -8,7 +8,9 @@ var playerSchema = new Schema ({
 ,  sex:{type:String,required:true}
 ,  tee:{type:String,required:true}
 ,  email: {type:String,required:true}
-,  score:{type:Schema.ObjectId, ref:'score'}
-,  course:{type:Schema.ObjectId, ref:'course'}
+,  scores:[{
+      score:{type:Schema.ObjectId, ref:'score'}
+   ,  course:{type:Schema.ObjectId, ref:'course'}
+   }]
    })
 module.exports = mongoose.model('player', playerSchema)

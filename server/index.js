@@ -37,6 +37,7 @@ app.post('/player/create', player.playerCreate)
 app.post('/player/scoresubmit/:ID', player.playerScoreSubmit)
 app.get('/player/all', player.players)
 app.get('/player/:ID',player.playerID)
+app.get('/player/score/:ID',player.getScores)
 app.put('/player/update/:ID', player.playerUpdate)
 app.delete('/player/delete/:ID',player.playerDelete)
 ///////////////////////////

@@ -39,12 +39,12 @@ Player.findById(req.params.ID, function(e,r){
 }
 //update player by ID request
 ,  playerUpdate: function(req,res){
-   Player.findByIdandUpdate(req.params.ID, function(e,r){
+   Player.findByIdAndUpdate(req.params.ID,req.body,{new:true},function(e,r){
       if(e){
          res.status(500).json(e)
       }
       else{
-         res.send(r.data)
+         res.send(r)
       }
    })
 }
@@ -65,16 +65,23 @@ Player.findById(req.params.ID, function(e,r){
       if(err) return res.send(err);
       console.log(newScore);
       Player.findByIdAndUpdate(req.params.ID,
-         {$push:{
+         {$push:{scores:[{
             score:newScore._id
-         ,  course:req.body.course._id}})
+         ,  course:req.body.course._id}]}
+      })
          .populate('Score','Course')
          .exec(function(e,score,course){
          if(e)res.send(e)
       })
    })
 }
-
-
-
+, getScores: function(req,res){
+   Player.findById(req.params.ID).populate('scores.score','scores.course').exec(function(e,player){
+         if(e) return res.send(e)
+         else{res.send(player)}
+      }
+   )}
+/////////////////////////////
+/////end of module exports///
+/////////////////////////////
 }
