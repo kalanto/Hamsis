@@ -2,4 +2,29 @@
    <option value="" selected="selected">Select a Player</option>
 </select>
    <button ng-click="getScores(player)">Get Player Score's</button>
-<div>{{playerScores}}</div>
+<div ng-repeat="score in playerScores">
+   {{playerScores.name.first}}
+      {{playerScores.name.last}}
+      <br>
+      {{display.course.name}}
+      <br>
+      {{display.score[0]}}
+      {{display.score[1]}}
+      {{display.score[2]}}
+      {{display.score[3]}}
+      {{display.score[4]}}
+      {{display.score[5]}}
+      {{display.score[6]}}
+      {{display.score[7]}}
+      {{display.score[8]}}
+      {{display.score[9]}}
+      {{display.score[10]}}
+      {{display.score[11]}}
+      {{display.score[12]}}
+      {{display.score[13]}}
+      {{display.score[14]}}
+      {{display.score[15]}}
+      {{display.score[16]}}
+      {{display.score[17]}}
+         <br>
+</div>

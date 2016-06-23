@@ -1,5 +1,6 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
+var Round = require('../schema/roundSchema')
 var playerSchema = new Schema ({
    name: {
       first: {type:String,required:true}
@@ -8,9 +9,6 @@ var playerSchema = new Schema ({
 ,  sex:{type:String,required:true}
 ,  tee:{type:String,required:true}
 ,  email: {type:String,required:true}
-,  scores:[{
-      score:{type:Schema.ObjectId, ref:'score'}
-   ,  course:{type:Schema.ObjectId, ref:'course'}
-   }]
+,  rounds: [Round]
    })
 module.exports = mongoose.model('player', playerSchema)

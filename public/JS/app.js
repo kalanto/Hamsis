@@ -19,12 +19,16 @@ angular.module('app',['ui.router'])
    })
    .state('addplayer',{
       url:'/addteamplayer'
-   ,  templateUrl:"views/addteamplayer.html"
+   ,  templateUrl:'views/addteamplayer.html'
    })
    .state('playerscores',{
       url:'/playerscores'
    ,  templateUrl:'views/playerscore.html'
-})
+   })
+   .state('scorecard',{
+      url:'/scorecard'
+   ,  templateUrl:'views/scorecard.html'
+});
 
    $urlRouterProvider.otherwise('/')
 })

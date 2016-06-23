@@ -1,6 +1,5 @@
 var Player = require('../../server/schema/playerSchema.js')
-var Score = require('../../server/schema/scoreSchema.js')
-var Promise = require('bluebird')
+var Round = require('../../server/schema/roundSchema.js')
 module.exports={
 //create new player
 playerCreate: function(req,res,next){
@@ -52,7 +51,7 @@ Player.findById(req.params.ID, function(e,r){
 //delete player by ID request
 ,  playerDelete: function(req,res){
    console.log(req.body)
-   Player.findByIdAndRemove(req.params.ID,req.body,function(e,r){
+   Player.findByIdAndRemove(req.params.ID,function(e,r){
       if(e){
          res.status(500).json(e)
       }
@@ -62,30 +61,26 @@ Player.findById(req.params.ID, function(e,r){
       }
    })
 }
-//submit players score after round is finished. this creats a new scoreID and assigns it to the player as a reference with the course ID
-, playerScoreSubmit: function(req, res){
-   Score.create({score:req.body.score} , function(err,newScore){
-      if(err) return res.send(err);
-      console.log(newScore);
+//submit players score after round is finished. Creating a new round and then saving it to the coresponding player
+, playerScoreSubmit: function(req,res){
       Player.findByIdAndUpdate(req.params.ID,
-         {$push:{scores:[{
-            score:newScore
-         ,  course:req.body.course}]}
+            {$push:{rounds:req.body.round
+         }
       })
-         .populate('Score','Course')
-         .exec(function(e,score,course){
+         .populate('round')
+         .exec(function(e,r){
+            console.log(r)
          if(e)res.send(e)
       })
-   })
 }
 , getScores: function(req,res){
-   Player.findById(req.params.ID).populate('scores.score scores.course').exec(function(e,player){
-         if(e) return res.send(e)
-
-         else{
-
-            res.send(player)}
-      }
+      Player
+         .findById(req.params.ID)
+         .populate({path:'rounds.course', model:'course'})
+         .exec(function(e,player){
+            if(e) return res.send(e)
+            res.send(player)
+         }
    )}
 /////////////////////////////
 /////end of module exports///

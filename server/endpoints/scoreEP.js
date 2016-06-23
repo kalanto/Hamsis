@@ -1,4 +1,4 @@
-var Score = require('../../server/schema/scoreSchema.js')
+var Score = require('../../server/schema/roundSchema.js')
 module.exports ={
 //create new scoring
 scoreCreate: function(req,res){
