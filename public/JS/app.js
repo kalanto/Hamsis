@@ -17,7 +17,7 @@ angular.module('app',['ui.router'])
       url:'/team'
    ,  templateUrl:'views/team.html'
    })
-   .state('addplayer',{
+   .state('addteamplayer',{
       url:'/addteamplayer'
    ,  templateUrl:'views/addteamplayer.html'
    })
