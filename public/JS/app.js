@@ -31,4 +31,4 @@ angular.module('app',['ui.router'])
 });
 
    $urlRouterProvider.otherwise('/')
-})
+});
